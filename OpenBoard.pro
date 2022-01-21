@@ -1,7 +1,7 @@
 TARGET = "OpenBoard"
 TEMPLATE = app
 
-CONFIG += c++14
+CONFIG += c++17
 CONFIG -= flat
 CONFIG += debug_and_release \
           no_include_pwd
@@ -30,16 +30,16 @@ VERSION_RC = $$replace(VERSION_RC, "rc", "192" ) # 0xC0
 VERSION_RC = $$replace(VERSION_RC, "r", "240") # 0xF0
 
 QT += svg
+QT += svgwidgets
 QT += network
 QT += xml
-QT += xmlpatterns
 QT += uitools
 QT += multimedia
 QT += multimediawidgets
-QT += webengine
 QT += webenginewidgets
 QT += printsupport
 QT += core
+QT += core5compat
 QT += concurrent
 
 INCLUDEPATH += src
@@ -452,7 +452,7 @@ linux-g++* {
     #LIBS += -lprofiler
     LIBS += -lX11
     LIBS += -lquazip5
-    INCLUDEPATH += "/usr/include/quazip"
+    INCLUDEPATH += "/usr/include/quazip5"
 
     LIBS += -lpoppler
     INCLUDEPATH += "/usr/include/poppler"

@@ -63,8 +63,8 @@ UBExportFullPDF::UBExportFullPDF(QObject *parent)
     : UBExportAdaptor(parent)
 {
     //need to calculate screen resolution
-    QDesktopWidget* desktop = UBApplication::desktop();
-    int dpiCommon = (desktop->physicalDpiX() + desktop->physicalDpiY()) / 2;
+    QScreen* desktop = UBApplication::primaryScreen();
+    int dpiCommon = (desktop->physicalDotsPerInchX() + desktop->physicalDotsPerInchY()) / 2;
     mScaleFactor = 72.0f / dpiCommon; // 1pt = 1/72 inch
 
     mSimpleExporter = new UBExportPDF();

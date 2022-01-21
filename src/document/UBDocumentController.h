@@ -30,6 +30,7 @@
 #define UBDOCUMENTCONTROLLER_H_
 
 #include <QtGui>
+#include <QRegularExpression>
 #include "document/UBDocumentContainer.h"
 #include "core/UBApplicationController.h"
 #include "core/UBApplication.h"
@@ -60,8 +61,8 @@ class UBDocumentReplaceDialog : public QDialog
     Q_OBJECT
 
 public:
-    UBDocumentReplaceDialog(const QString &pIncommingName, const QStringList &pFileList, QWidget *parent = 0, Qt::WindowFlags pFlags = 0);
-    void setRegexp(const QRegExp pRegExp);
+    UBDocumentReplaceDialog(const QString &pIncommingName, const QStringList &pFileList, QWidget *parent = 0, Qt::WindowFlags pFlags = Qt::Widget);
+    void setRegexp(const QRegularExpression pRegExp);
     bool validString(const QString &pStr);
     void setFileNameAndList(const QString &fileName, const QStringList &pLst);
     QString  labelTextWithName(const QString &documentName) const;
@@ -79,7 +80,7 @@ private slots:
 
 private:
     QLineEdit *mLineEdit;
-    QRegExpValidator *mValidator;
+    QRegularExpressionValidator *mValidator;
     QStringList mFileNameList;
     QString mIncommingName;
     QPushButton *acceptButton;

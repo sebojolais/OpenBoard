@@ -40,7 +40,7 @@
     }                                  \
 
 #include <QtGui>
-#include <QtSvg>
+#include <QGraphicsSvgItem>
 #include <QMimeData>
 #include <QGraphicsVideoItem>
 
@@ -240,7 +240,7 @@ class UBGraphicsItemDelegate : public QObject
     Q_OBJECT
 
     public:
-    UBGraphicsItemDelegate(QGraphicsItem* pDelegated, QObject * parent = 0, UBGraphicsFlags fls = 0);
+    UBGraphicsItemDelegate(QGraphicsItem* pDelegated, QObject * parent = 0, UBGraphicsFlags fls = GF_NONE);
 
         virtual ~UBGraphicsItemDelegate();
 
