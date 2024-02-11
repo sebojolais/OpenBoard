@@ -35,6 +35,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBFeaturesActionBar.h
     UBFeaturesWidget.cpp
     UBFeaturesWidget.h
+    UBFlowLayout.cpp
+    UBFlowLayout.h
     UBFloatingPalette.cpp
     UBFloatingPalette.h
     UBIconButton.cpp
@@ -57,6 +59,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBOpenSankoreImporterWidget.h
     UBPageNavigationWidget.cpp
     UBPageNavigationWidget.h
+    UBPreferredBackgroundWidget.cpp
+    UBPreferredBackgroundWidget.h
     UBPropertyPalette.cpp
     UBPropertyPalette.h
     UBResources.cpp
