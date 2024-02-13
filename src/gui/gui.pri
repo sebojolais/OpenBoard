@@ -43,6 +43,8 @@ HEADERS += src/gui/UBThumbnailView.h \
     src/gui/UBBackgroundPalette.h \
     src/gui/UBBackgroundManager.h \
     src/gui/UBBackgroundRuling.h \
+    src/gui/UBFlowLayout.h \
+    src/gui/UBPreferredBackgroundWidget.h \
     src/gui/UBBoardThumbnailsView.h
 SOURCES += src/gui/UBThumbnailView.cpp \
     $$PWD/UBStartupHintsPalette.cpp \
@@ -89,6 +91,8 @@ SOURCES += src/gui/UBThumbnailView.cpp \
     src/gui/UBBackgroundPalette.cpp \
     src/gui/UBBackgroundManager.cpp \
     src/gui/UBBackgroundRuling.cpp \
+    src/gui/UBFlowLayout.cpp \
+    src/gui/UBPreferredBackgroundWidget.cpp \
     src/gui/UBBoardThumbnailsView.cpp
 win32:SOURCES += src/gui/UBKeyboardPalette_win.cpp
 macx:OBJECTIVE_SOURCES += src/gui/UBKeyboardPalette_mac.mm
