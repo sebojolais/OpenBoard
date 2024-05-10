@@ -38,10 +38,10 @@
 
 #include "globals/UBGlobals.h"
 
-#include <poppler/Object.h>
-#include <poppler/GlobalParams.h>
-#include <poppler/SplashOutputDev.h>
-#include <poppler/PDFDoc.h>
+#include <xpdf/Object.h>
+#include <xpdf/GlobalParams.h>
+#include <xpdf/SplashOutputDev.h>
+#include <xpdf/PDFDoc.h>
 
 class PDFDoc;
 
