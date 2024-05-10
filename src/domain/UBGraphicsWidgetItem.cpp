@@ -174,6 +174,7 @@ UBGraphicsWidgetItem::UBGraphicsWidgetItem(const QUrl &pWidgetUrl, QGraphicsItem
 
     setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
     setAcceptHoverEvents(true);
+    //setAcceptTouchEvents(true);
 
     // workaround for QTBUG-108284 - to be removed when bug is fixed
     QWindow* window = mWebEngineView->windowHandle();

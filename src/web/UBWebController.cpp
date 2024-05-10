@@ -130,6 +130,8 @@ UBWebController::UBWebController(UBMainWindow* mainWindow)
     settings->setAttribute(QWebEngineSettings::DnsPrefetchEnabled, true);
     settings->setAttribute(QWebEngineSettings::LocalContentCanAccessRemoteUrls, true);
     settings->setAttribute(QWebEngineSettings::ScreenCaptureEnabled, true);
+    //settings->setAttribute(QWebEngineSettings::TouchIconsEnabled, true);
+    //settings->setAttribute(QWebEngineSettings::FocusOnNavigationEnabled, true);
 
     // install cookie filter
     QWebEngineCookieStore* cookieStore = mWebProfile->cookieStore();
