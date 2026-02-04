@@ -94,6 +94,9 @@ UBPreferencesController::UBPreferencesController(QWidget *parent)
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 5, 0))
     mPreferencesUI->keySequence->setMaximumSequenceLength(1);
 #endif
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 4, 0))
+    mPreferencesUI->keySequence->setClearButtonEnabled(true);
+#endif
 
     wire();
 }
