@@ -7,7 +7,9 @@ UBSortFilterProxyModel::UBSortFilterProxyModel():
     setDynamicSortFilter(false);
     setSortCaseSensitivity(Qt::CaseInsensitive);
     setRecursiveFilteringEnabled(true);
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
     setAutoAcceptChildRows(true);
+#endif
 }
 
 bool UBSortFilterProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
