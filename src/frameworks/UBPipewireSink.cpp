@@ -27,7 +27,7 @@
 
 #include <spa/debug/types.h>
 #include <spa/param/format-utils.h>
-#include <spa/param/video/raw-utils.h>
+//#include <spa/param/video/raw-utils.h>
 #include <spa/pod/builder.h>
 
 #include <fcntl.h>
@@ -272,12 +272,12 @@ void UBPipewireSink::streamParamChanged(uint32_t id, const spa_pod* param)
     if (mFormat.media_type != SPA_MEDIA_TYPE_video || mFormat.media_subtype != SPA_MEDIA_SUBTYPE_raw)
         return;
 
-    if (spa_format_video_raw_parse(param, &mFormat.info.raw) < 0)
-        return;
+//    if (spa_format_video_raw_parse(param, &mFormat.info.raw) < 0)
+//        return;
 
     qDebug() << "got video format:";
-    qDebug() << "  format:" << mFormat.info.raw.format
-             << spa_debug_type_find_name(spa_type_video_format, mFormat.info.raw.format);
+//    qDebug() << "  format:" << mFormat.info.raw.format
+//             << spa_debug_type_find_name(spa_type_video_format, mFormat.info.raw.format);
     qDebug() << "  size:" << mFormat.info.raw.size.width << mFormat.info.raw.size.height;
     qDebug() << "  framerate:" << mFormat.info.raw.framerate.num << "/" << mFormat.info.raw.framerate.denom;
 }
