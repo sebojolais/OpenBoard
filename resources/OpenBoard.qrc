@@ -2,7 +2,6 @@
     <qresource prefix="/">
         <file>images/OpenBoard.png</file>
         <file>images/bigOpenBoard.png</file>
-        <file>images/close.svg</file>
         <file>images/increase.svg</file>
         <file>images/decrease.svg</file>
         <file>images/resize.svg</file>
@@ -34,6 +33,8 @@
         <file>images/resizeRuler.svg</file>
         <file>images/resizeCompass.svg</file>
         <file>images/closeTool.svg</file>
+        <file>images/close.svg</file>
+        <file>images/close-no-bg.png</file>
         <file>images/hflipTool.svg</file>
         <file>images/vflipTool.svg</file>
         <file>images/resetTool.svg</file>
@@ -196,8 +197,6 @@
         <file>images/addItemToCurrentPage.svg</file>
         <file>images/addItemToNewPage.svg</file>
         <file>images/addItemToLibrary.svg</file>
-        <file>style/treeview-branch-closed.png</file>
-        <file>style/treeview-branch-open.png</file>
         <file>webbrowser/closetab.png</file>
         <file>webbrowser/loading.gif</file>
         <file>webbrowser/notfound.html</file>
@@ -210,6 +209,8 @@
         <file>images/save.svg</file>
         <file>images/libpalette/social.png</file>
         <file>images/navig_arrow.png</file>
+        <file>darkTheme.qss</file>
+        <file>lightTheme.qss</file>
         <file>images/flags/ar.png</file>
         <file>images/flags/bg.png</file>
         <file>images/flags/ca.png</file>
@@ -317,18 +318,14 @@
         <file>images/libpalette/FlashCategory.svg</file>
         <file>images/libpalette/FlashIcon.svg</file>
         <file>images/toolbar/stylusTab.png</file>
-        <file>images/library_close.png</file>
-        <file>images/library_open.png</file>
-        <file>images/pages_close.png</file>
-        <file>images/pages_open.png</file>
         <file>images/cache_close.png</file>
         <file>images/cache_open.png</file>
         <file>images/cache_circle.png</file>
         <file>images/cache_square.png</file>
-        <file>images/down_arrow.png</file>
-        <file>images/up_arrow.png</file>
-        <file>images/left_arrow.png</file>
-        <file>images/right_arrow.png</file>
+        <file>images/down_arrow.svg</file>
+        <file>images/up_arrow.svg</file>
+        <file>images/left_arrow.svg</file>
+        <file>images/right_arrow.svg</file>
         <file>images/moveUp.svg</file>
         <file>images/moveDown.svg</file>
         <file>images/moveDownDisabled.svg</file>
@@ -337,8 +334,6 @@
         <file>images/moveUpDisabled.svg</file>
         <file>style.qss</file>
         <file>images/libpalette/WebSearchCategory.svg</file>
-        <file>images/download_close.png</file>
-        <file>images/download_open.png</file>
         <file>images/tab_mask.png</file>
         <file>images/duplicateDisabled.svg</file>
         <file>images/roundeRrectangle.svg</file>

@@ -35,6 +35,7 @@
 #include <QWebChannel>
 #include "UBStartupHintsPalette.h"
 #include "core/UBApplication.h"
+#include "core/UBThemeManager.h"
 #include "web/UBWebController.h"
 
 #include "globals/UBGlobals.h"
@@ -43,12 +44,13 @@
 
 
 
-
 UBStartupHintsPalette::UBStartupHintsPalette(QWidget *parent) :
     UBFloatingPalette(Qt::BottomRightCorner,parent)
 {
     setObjectName("UBStartupHintsPalette");
+    setClosable(true);
     setFixedSize(800,600);
+    
     mLayout = new QVBoxLayout();
     mLayout->setContentsMargins(10,28,10,10);
     setLayout(mLayout);
@@ -67,8 +69,12 @@ UBStartupHintsPalette::UBStartupHintsPalette(QWidget *parent) :
     mShowNextTime = new QCheckBox(tr("Visible next time"),this);
     mShowNextTime->setChecked(UBSettings::settings()->appStartupHintsEnabled->get().toBool());
     connect(mShowNextTime,SIGNAL(stateChanged(int)),this,SLOT(onShowNextTimeStateChanged(int)));
+    
+    connect(UBThemeManager::instance(), &UBThemeManager::themeChanged, mpSankoreAPI, &UBWidgetUniboardAPI::themeChanged);
+
     mButtonLayout->addStretch();
     mButtonLayout->addWidget(mShowNextTime);
+
     hide();
 }
 
@@ -81,28 +87,6 @@ UBStartupHintsPalette::~UBStartupHintsPalette()
 void UBStartupHintsPalette::paintEvent(QPaintEvent *event)
 {
     UBFloatingPalette::paintEvent(event);
-
-    QPainter painter(this);
-    painter.drawPixmap(0, 0, QPixmap(":/images/close.svg"));
-}
-
-
-void UBStartupHintsPalette::close()
-{
-    hide();
-}
-
-
-void UBStartupHintsPalette::mouseReleaseEvent(QMouseEvent * event)
-{
-    if (event->pos().x() >= 0 && event->pos().x() < QPixmap(":/images/close.svg").width()
-        && event->pos().y() >= 0 && event->pos().y() < QPixmap(":/images/close.svg").height())
-    {
-        event->accept();
-        close();
-    }
-
-    UBFloatingPalette::mouseReleaseEvent(event);
 }
 
 void UBStartupHintsPalette::onShowNextTimeStateChanged(int state)

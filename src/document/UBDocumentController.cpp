@@ -513,12 +513,14 @@ QVariant UBDocumentTreeModel::data(const QModelIndex &index, int role) const
     }
 
     if(role == Qt::BackgroundRole){
-        if (isConstant(index)) {
-            return QBrush(0xD9DFEB);
+        if (isConstant(index))
+        {
+            return QBrush(QApplication::palette().color(QPalette::AlternateBase));
         }
 
-        if (mHighLighted.isValid() && index.row() == mHighLighted.row()) {
-            return QBrush(0x6682B5);
+        if (mHighLighted.isValid() && index.row() == mHighLighted.row())
+        {
+            return QBrush(QApplication::palette().color(QPalette::Highlight));
         }
     }
 
@@ -564,7 +566,7 @@ QVariant UBDocumentTreeModel::data(const QModelIndex &index, int role) const
             break;
         case (Qt::ForegroundRole) :
             if (isConstant(index)) {
-                return QColor(Qt::darkGray);
+                return QColor(QApplication::palette().color(QPalette::WindowText));
             }
             break;
         }
@@ -1680,7 +1682,7 @@ void UBDocumentTreeItemDelegate::processChangedText(const QString &str) const
             }
             else
             {
-                editor->setStyleSheet("background-color: #FFFFFF;");
+                editor->setStyleSheet("");
             }
         }
     }
@@ -2186,8 +2188,6 @@ void UBDocumentController::setupViews()
         connect(this, &UBDocumentContainer::documentSet, mDocumentUI->thumbnailWidget, [this](std::shared_ptr<UBDocumentProxy> proxy){
             mDocumentUI->thumbnailWidget->setDocument(UBDocument::getDocument(proxy));
         });
-
-        mDocumentUI->thumbnailWidget->setBackgroundBrush(UBSettings::documentViewLightColor);
 
         #ifdef Q_WS_MACX
             mMessageWindow = new UBMessageWindow(NULL);

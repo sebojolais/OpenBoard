@@ -163,7 +163,9 @@ class UBSettings : public QObject
         static QColor paletteColor;
         static QColor opaquePaletteColor;
 
-        static QColor documentViewLightColor;
+        static QColor documentThumbnailsViewColor;
+        static QColor boardThumbnailsViewColor;
+        static QColor pageNavigationWidgetColor;
 
         static QBrush eraserBrushDarkBackground;
         static QBrush eraserBrushLightBackground;
@@ -258,6 +260,7 @@ class UBSettings : public QObject
         UBSetting* appHideCheckForSoftwareUpdate;
         UBSetting* appToolBarOrientationVertical;
         UBSetting* appPreferredLanguage;
+        UBSetting* appThemeMode;
         UBSetting* appRunInWindow;
 
         UBSetting* appIsInSoftwareUpdateProcess;
