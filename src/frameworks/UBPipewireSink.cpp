@@ -276,8 +276,8 @@ void UBPipewireSink::streamParamChanged(uint32_t id, const spa_pod* param)
 //        return;
 
     qDebug() << "got video format:";
-//    qDebug() << "  format:" << mFormat.info.raw.format
-//             << spa_debug_type_find_name(spa_type_video_format, mFormat.info.raw.format);
+    qDebug() << "  format:" << mFormat.info.raw.format
+             << spa_debug_type_find_name(spa_type_video_format, mFormat.info.raw.format);
     qDebug() << "  size:" << mFormat.info.raw.size.width << mFormat.info.raw.size.height;
     qDebug() << "  framerate:" << mFormat.info.raw.framerate.num << "/" << mFormat.info.raw.framerate.denom;
 }
